@@ -9,3 +9,6 @@ MANIFEST
 build
 *nav
 *snm
+_build
+_static
+_templates
