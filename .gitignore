@@ -1,0 +1,11 @@
+env/
+*pyc
+*.DS_Store
+site/
+_build/
+*.log
+dist/
+MANIFEST
+build
+*nav
+*snm
