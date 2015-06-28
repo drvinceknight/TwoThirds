@@ -29,7 +29,7 @@ class Data:
             r = []
             for column in df_dict:
                 if column != name_column:
-                    d = {df_dict[name_column][indx]: df_dict[column][indx] for
+                    d = {df_dict[name_column][indx]: int(df_dict[column][indx]) for
                             indx in df_dict[column]}
-                r.append(d)
+                    r.append(d)
         return r

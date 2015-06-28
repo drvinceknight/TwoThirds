@@ -87,3 +87,11 @@ class TestGame(unittest.TestCase):
         sorted_names = sorted(data.keys())
         expected_result = tuple(sorted_names + [100])
         self.assertEqual(expected_result, g.find_winner())
+
+    def test_find_winner_for_dict_4(self):
+        data = {'A': 1,
+                'B': 2,
+                'C': 3}
+        g = twothirds.TwoThirdsGame(data)
+        expected_result = ('A', 1)
+        self.assertEqual(expected_result, g.find_winner())
