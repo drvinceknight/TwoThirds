@@ -21,3 +21,15 @@ class Data:
     def _read_csv(self):
         self.df = pandas.read_csv(self.filename)
         self.df.rename(columns=lambda x: x.strip(), inplace=True)
+
+    def out(self):
+        if self.df.ix[:, 0].dtype == object:
+            df_dict = self.df.to_dict()
+            name_column = self.df.columns[0]
+            r = []
+            for column in df_dict:
+                if column != name_column:
+                    d = {df_dict[name_column][indx]: df_dict[column][indx] for
+                            indx in df_dict[column]}
+                r.append(d)
+        return r

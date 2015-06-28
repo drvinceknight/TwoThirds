@@ -56,3 +56,14 @@ class TestData(unittest.TestCase):
         self.assertEqual((3, 3), data.df.shape)
         self.assertEqual([1, 2, 3], list(data.df['Guess 1']))
         self.assertEqual([4, 5, 6], list(data.df['Guess 2']))
+
+    def test_data_out(self):
+        file_name = 'twothirds/tests/test_data/game2.xlsx'
+        data = twothirds.Data(file_name)
+        data.read()
+        dicts = [{u'A': 1, u'B': 2, u'C': 3}]
+        dicts.append({u'A': 4, u'B': 5, u'C': 6})
+        dicts.append({u'A': 4, u'B': 5, u'C': 6})
+        out = data.out()
+        for i, d in enumerate(dicts):
+            self.assertEqual(out[i], d)
