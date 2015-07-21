@@ -6,11 +6,19 @@
 Welcome to Two Thirds of the Average Game with Python's documentation!
 ======================================================================
 
-Contents:
+This library was written to accompany a paper recently accepted for the
+`connections journal <https://journals.gre.ac.uk/index.php/msor>`_.
+
+It allows for the quick analysis of in class plays of the two thirds of the
+average game.
+
+A demo is available `here
+<https://github.com/drvinceknight/TwoThirds/blob/master/demo.ipynb>`_.
+
+This is being actively developed.
 
 .. toctree::
    :maxdepth: 2
-
 
 
 Indices and tables

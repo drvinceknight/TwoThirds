@@ -10,7 +10,6 @@ build
 *nav
 *snm
 _build
-_static
 _templates
 *.ipynb_checkpoints/
 demo.csv
