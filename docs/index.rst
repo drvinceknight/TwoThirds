@@ -17,6 +17,10 @@ A demo is available `here
 
 This is being actively developed.
 
+To install the package simply run::
+
+    $ pip install twothirds
+
 .. toctree::
    :maxdepth: 2
 
