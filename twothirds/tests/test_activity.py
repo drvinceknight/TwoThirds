@@ -28,3 +28,22 @@ class TestActivity(unittest.TestCase):
         self.assertEqual(activity.two_thirds, [4.0 / 3, 2.0 * 5 / 3 ])
         self.assertEqual(activity.winners, ['A', 'A'])
         self.assertEqual(activity.winning_guesses, [1, 4])
+
+    def test__repr__(self):
+        file_name = 'twothirds/tests/test_data/game2.csv'
+        activity = twothirds.Activity(file_name)
+        activity.analyse()
+        string = """=====================
+Game 0
+---------------------
+2/3rds of the average: 1.33
+Winning guess: 1
+Winner(s): A
+=====================
+Game 1
+---------------------
+2/3rds of the average: 3.33
+Winning guess: 4
+Winner(s): A
+"""
+        self.assertMultiLineEqual(activity.__repr__(), string)
