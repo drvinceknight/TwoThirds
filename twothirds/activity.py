@@ -1,5 +1,7 @@
 """A class for an overall activity"""
 from twothirds import Data, TwoThirdsGame
+import seaborn as sns
+import matplotlib.pyplot as plt
 
 class Activity:
     def __init__(self, filename):
@@ -23,7 +25,8 @@ Game {}
 2/3rds of the average: {:.2f}
 Winning guess: {}
 Winner(s): {}
-""".format(i, self.two_thirds[i], self.winning_guesses[i],
-                    self.winners[i])
+""".format(i, self.two_thirds[i], self.winning_guesses[i], self.winners[i])
         return string
 
+    def pair_plot(self):
+        return sns.pairplot(self.raw_data.df)
