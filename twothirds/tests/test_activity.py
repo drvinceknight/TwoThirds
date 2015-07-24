@@ -20,3 +20,11 @@ class TestActivity(unittest.TestCase):
             self.assertEqual(d, dicts[i])
         self.assertEqual(activity.games[0].find_winner(), (u'A', 1))
         self.assertEqual(activity.games[1].find_winner(), (u'A', 4))
+
+    def test_analysis_of_results(self):
+        file_name = 'twothirds/tests/test_data/game2.csv'
+        activity = twothirds.Activity(file_name)
+        activity.analyse()
+        self.assertEqual(activity.two_thirds, [4.0 / 3, 2.0 * 5 / 3 ])
+        self.assertEqual(activity.winners, ['A', 'A'])
+        self.assertEqual(activity.winning_guesses, [1, 4])
