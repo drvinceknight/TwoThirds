@@ -31,19 +31,19 @@ class TestActivity(unittest.TestCase):
         self.assertEqual(activity.winners, [('A',), ('A',)])
         self.assertEqual(activity.winning_guesses, [1, 4])
 
-    def test_pairplot_results(self):
-        file_name = 'twothirds/tests/test_data/game2.csv'
-        activity = twothirds.Activity(file_name)
-        activity.analyse()
-        p = activity.pairplot()
-        self.assertIs(type(p), matplotlib.figure.Figure)
+    #def test_pairplot_results(self):
+        #file_name = 'twothirds/tests/test_data/game2.csv'
+        #activity = twothirds.Activity(file_name)
+        #activity.analyse()
+        #p = activity.pairplot()
+        #self.assertIs(type(p), matplotlib.figure.Figure)
 
-    def test_distplot_results(self):
-        file_name = 'twothirds/tests/test_data/game2.csv'
-        activity = twothirds.Activity(file_name)
-        activity.analyse()
-        p = activity.distplot()
-        self.assertIs(type(p), matplotlib.figure.Figure)
+    #def test_distplot_results(self):
+        #file_name = 'twothirds/tests/test_data/game2.csv'
+        #activity = twothirds.Activity(file_name)
+        #activity.analyse()
+        #p = activity.distplot()
+        #self.assertIs(type(p), matplotlib.figure.Figure)
 
     def test__repr__(self):
         file_name = 'twothirds/tests/test_data/game2.csv'
