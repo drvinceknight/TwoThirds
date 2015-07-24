@@ -21,11 +21,11 @@ class TwoThirdsGame:
         Returns tuples of names who won as well as winning guesses.
         """
         if type(self.data) is list:
-            return min(self.data, key=lambda x:
-                abs(x-self.two_thirds_of_the_average()))
+            best_guess = min(self.data, key=lambda x: abs(x-self.two_thirds_of_the_average()))
+            winning_guessers = ['Anonymous']
         if type(self.data) is dict:
             best_guess = min(self.data.values(), key=lambda x:
                 abs(x-self.two_thirds_of_the_average()))
             winning_guessers = [guesser for guesser in self.data if
                     self.data[guesser] == best_guess]
-            return tuple(sorted(winning_guessers) + [best_guess])
+        return tuple(sorted(winning_guessers) + [best_guess])

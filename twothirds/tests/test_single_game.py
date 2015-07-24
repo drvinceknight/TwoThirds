@@ -32,22 +32,22 @@ class TestGame(unittest.TestCase):
     def test_find_winner_for_list(self):
         data = range(100)
         g = twothirds.TwoThirdsGame(data)
-        self.assertEqual(33, g.find_winner())
+        self.assertEqual(('Anonymous', 33), g.find_winner())
 
     def test_find_winner_for_list_1(self):
         data = [5, 5, 10, 9, 1, 0]
         g = twothirds.TwoThirdsGame(data)
-        self.assertEqual(5, g.find_winner())
+        self.assertEqual(('Anonymous', 5), g.find_winner())
 
     def test_find_winner_for_list_2(self):
         data = [0, 0, 0, 0, 0, 0]
         g = twothirds.TwoThirdsGame(data)
-        self.assertEqual(0, g.find_winner())
+        self.assertEqual(('Anonymous', 0), g.find_winner())
 
     def test_find_winner_for_list_3(self):
         data = [100, 100, 100, 100, 100, 100]
         g = twothirds.TwoThirdsGame(data)
-        self.assertEqual(100, g.find_winner())
+        self.assertEqual(('Anonymous', 100), g.find_winner())
 
     def test_find_winner_for_dict(self):
         data = dict(zip(range(100), range(100)))

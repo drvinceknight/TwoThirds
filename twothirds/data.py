@@ -32,4 +32,6 @@ class Data:
                     d = {df_dict[name_column][indx]: int(df_dict[column][indx]) for
                             indx in df_dict[column]}
                     r.append(d)
+        else:
+            r = [self.df[c].tolist() for c in self.df.columns]
         return r
