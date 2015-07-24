@@ -1,6 +1,7 @@
 import unittest
 import twothirds
-import seaborn
+import matplotlib
+
 
 class TestActivity(unittest.TestCase):
     def test_initialisation_from_xls_file(self):
@@ -27,15 +28,22 @@ class TestActivity(unittest.TestCase):
         activity = twothirds.Activity(file_name)
         activity.analyse()
         self.assertEqual(activity.two_thirds, [4.0 / 3, 2.0 * 5 / 3])
-        self.assertEqual(activity.winners, ['A', 'A'])
+        self.assertEqual(activity.winners, [('A',), ('A',)])
         self.assertEqual(activity.winning_guesses, [1, 4])
 
-    def test_pair_plot_results(self):
+    def test_pairplot_results(self):
         file_name = 'twothirds/tests/test_data/game2.csv'
         activity = twothirds.Activity(file_name)
         activity.analyse()
-        p = activity.pair_plot()
-        self.assertIs(type(p), seaborn.axisgrid.PairGrid)
+        p = activity.pairplot()
+        self.assertIs(type(p), matplotlib.figure.Figure)
+
+    def test_distplot_results(self):
+        file_name = 'twothirds/tests/test_data/game2.csv'
+        activity = twothirds.Activity(file_name)
+        activity.analyse()
+        p = activity.distplot()
+        self.assertIs(type(p), matplotlib.figure.Figure)
 
     def test__repr__(self):
         file_name = 'twothirds/tests/test_data/game2.csv'
@@ -46,12 +54,12 @@ Game 0
 ---------------------
 2/3rds of the average: 1.33
 Winning guess: 1
-Winner(s): A
+Winner(s): ('A',)
 =====================
 Game 1
 ---------------------
 2/3rds of the average: 3.33
 Winning guess: 4
-Winner(s): A
+Winner(s): ('A',)
 """
         self.assertMultiLineEqual(activity.__repr__(), string)
