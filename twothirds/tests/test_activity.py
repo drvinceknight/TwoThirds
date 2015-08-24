@@ -31,6 +31,15 @@ class TestActivity(unittest.TestCase):
         self.assertEqual(activity.winners, [('A',), ('A',)])
         self.assertEqual(activity.winning_guesses, [1, 4])
 
+    def test_analysis_of_oxford_results(self):
+        file_name = 'twothirds/tests/test_data/oxford.csv'
+        activity = twothirds.Activity(file_name)
+        activity.analyse()
+        self.assertAlmostEqual(activity.two_thirds[0], 16.32)
+        self.assertAlmostEqual(activity.two_thirds[1], 13.6266666667)
+        self.assertEqual(activity.winners, [('Elena', 'Thomas'), ('Adam F',)])
+        self.assertEqual(activity.winning_guesses, [15, 14])
+
     #def test_pairplot_results(self):
         #file_name = 'twothirds/tests/test_data/game2.csv'
         #activity = twothirds.Activity(file_name)
