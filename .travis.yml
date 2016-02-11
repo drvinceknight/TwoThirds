@@ -22,13 +22,10 @@ install:
   # Useful for debugging any issues with conda
   - conda info -a
 
-   #Replace dep1 dep2 ... with your dependencies
-  #- conda create -q -n test-environment python=$TRAVIS_PYTHON_VERSION dep1 dep2 ...
-  #- source activate test-environment
-  #- python setup.py install
-
-  - conda install --yes python=$TRAVIS_PYTHON_VERSION numpy scipy
-  - "pip install -r requirements.txt"
+  #Replace dep1 dep2 ... with your dependencies
+  - conda create -q -n test-environment python=$TRAVIS_PYTHON_VERSION matplotlib mock nose numpy pandas pyparsing python-dateutil pytz scipy seaborn six wsgiref xlrd
+  - source activate test-environment
+  - python setup.py install
 
 script:
   - python -m unittest discover twothirds/tests
