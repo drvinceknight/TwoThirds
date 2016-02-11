@@ -23,7 +23,7 @@ install:
   - conda info -a
 
   #Replace dep1 dep2 ... with your dependencies
-  - conda create -q -n test-environment python=$TRAVIS_PYTHON_VERSION matplotlib mock nose numpy pandas pyparsing python-dateutil pytz scipy seaborn six wsgiref xlrd
+  - conda create -q -n test-environment python=$TRAVIS_PYTHON_VERSION matplotlib numpy pandas python-dateutil scipy seaborn
   - source activate test-environment
   - python setup.py install
 
