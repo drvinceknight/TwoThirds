@@ -13,7 +13,7 @@ setup(
         "matplotlib==1.4.3",
         "mock==1.0.1",
         "nose==1.3.7",
-        "numpy==1.9.2",
+        "numpy==1.22.0",
         "pandas==0.16.2",
         "pyparsing==2.0.3",
         "python-dateutil==2.4.2",
