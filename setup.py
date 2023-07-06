@@ -18,7 +18,7 @@ setup(
         "pyparsing==2.0.3",
         "python-dateutil==2.4.2",
         "pytz==2015.4",
-        "scipy==0.15.1",
+        "scipy==1.10.0",
         "seaborn==0.5.1",
         "six==1.9.0",
         "wsgiref==0.1.2",
